@@ -985,19 +985,19 @@ var InputHandler = /*#__PURE__*/function () {
 
 exports.default = InputHandler;
 },{}],"assets/spriteRobot.png":[function(require,module,exports) {
-module.exports = "/SpaceInvaders/spriteRobot.ed34e793.png";
+module.exports = "/spriteRobot.ed34e793.png";
 },{}],"assets/EnemyMonsterType1.png":[function(require,module,exports) {
-module.exports = "/SpaceInvaders/EnemyMonsterType1.7f531ef9.png";
+module.exports = "/EnemyMonsterType1.7f531ef9.png";
 },{}],"assets/EnemyMonsterType2.png":[function(require,module,exports) {
-module.exports = "/SpaceInvaders/EnemyMonsterType2.7b4074f7.png";
+module.exports = "/EnemyMonsterType2.7b4074f7.png";
 },{}],"assets/EnemyMonsterType3.png":[function(require,module,exports) {
-module.exports = "/SpaceInvaders/EnemyMonsterType3.f39e0da8.png";
+module.exports = "/EnemyMonsterType3.f39e0da8.png";
 },{}],"assets/greenbunker.png":[function(require,module,exports) {
-module.exports = "/SpaceInvaders/greenbunker.bbf233f8.png";
+module.exports = "/greenbunker.bbf233f8.png";
 },{}],"assets/faceRobot.png":[function(require,module,exports) {
-module.exports = "/SpaceInvaders/faceRobot.56f7e165.png";
+module.exports = "/faceRobot.56f7e165.png";
 },{}],"assets/evilEyes.jpg":[function(require,module,exports) {
-module.exports = "/SpaceInvaders/evilEyes.1de2fa57.jpg";
+module.exports = "/evilEyes.1de2fa57.jpg";
 },{}],"src/game.js":[function(require,module,exports) {
 "use strict";
 
@@ -1047,6 +1047,9 @@ var _evilEyes = _interopRequireDefault(require("../assets/evilEyes.jpg"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+var isAnounce = false;
+var songAnouncer = document.getElementById("anouncer");
+var songBlaster = document.getElementById("blaster");
 var heightAreaPlayer = 110;
 var countOfBunkers = 3;
 var countOfMonstersInRow = 2;
@@ -1115,6 +1118,18 @@ function init(canvas) {
 
 function update(time, stopGame) {
   if (!checkStateOfGame() || gameState.aliens.isWin) stopGame();
+  var timeAnounce = countOfKill % 10 == 0;
+
+  if (timeAnounce && !isAnounce) {
+    songAnouncer.volume = 0.8;
+    songAnouncer.play();
+    isAnounce = true;
+  }
+
+  if (!timeAnounce) {
+    isAnounce = false;
+  }
+
   gameState.aliens.move(time);
   moveController(time, stopGame);
   fireAliens(time);
@@ -1256,6 +1271,10 @@ function updateBullets(time) {
 function setAim(canvas, context) {
   canvas.onclick = function (event) {
     if (gameState.player.underBunker) return;
+    var songOfBlaster = new Audio();
+    songOfBlaster.src = songBlaster.src;
+    songOfBlaster.volume = 0.3;
+    songOfBlaster.play();
     gameState.player.direction = 10;
     gameState.bullets.push(new _bullet.default(gameState.player.x, gameState.player.y + gameState.player.h / 2, 10, "cyan", "player", 10));
     gameState.bullets[gameState.bullets.length - 1].fire(event.offsetX, event.offsetY);
@@ -1382,6 +1401,7 @@ var stopCycle;
 buttonStart.addEventListener("click", function () {
   audioGame.loop = true;
   audioGame.play();
+  audioGame.volume = 0.5;
   (0, _game.preload)(onPreloadComplete);
   buttonStart.style.display = "none";
 });
@@ -1496,7 +1516,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "56973" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59104" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
