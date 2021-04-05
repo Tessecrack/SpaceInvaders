@@ -985,19 +985,19 @@ var InputHandler = /*#__PURE__*/function () {
 
 exports.default = InputHandler;
 },{}],"assets/spriteRobot.png":[function(require,module,exports) {
-module.exports = "/spriteRobot.ed34e793.png";
+module.exports = "/SpaceInvaders/spriteRobot.ed34e793.png";
 },{}],"assets/EnemyMonsterType1.png":[function(require,module,exports) {
-module.exports = "/EnemyMonsterType1.7f531ef9.png";
+module.exports = "/SpaceInvaders/EnemyMonsterType1.7f531ef9.png";
 },{}],"assets/EnemyMonsterType2.png":[function(require,module,exports) {
-module.exports = "/EnemyMonsterType2.7b4074f7.png";
+module.exports = "/SpaceInvaders/EnemyMonsterType2.7b4074f7.png";
 },{}],"assets/EnemyMonsterType3.png":[function(require,module,exports) {
-module.exports = "/EnemyMonsterType3.f39e0da8.png";
+module.exports = "/SpaceInvaders/EnemyMonsterType3.f39e0da8.png";
 },{}],"assets/greenbunker.png":[function(require,module,exports) {
-module.exports = "/greenbunker.bbf233f8.png";
+module.exports = "/SpaceInvaders/greenbunker.bbf233f8.png";
 },{}],"assets/faceRobot.png":[function(require,module,exports) {
-module.exports = "/faceRobot.56f7e165.png";
+module.exports = "/SpaceInvaders/faceRobot.56f7e165.png";
 },{}],"assets/evilEyes.jpg":[function(require,module,exports) {
-module.exports = "/evilEyes.1de2fa57.jpg";
+module.exports = "/SpaceInvaders/evilEyes.1de2fa57.jpg";
 },{}],"src/game.js":[function(require,module,exports) {
 "use strict";
 
