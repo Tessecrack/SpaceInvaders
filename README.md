@@ -1,4 +1,3 @@
-![Screenshot](assets/spriteRobot.png)	
 ![Screenshot](assets/EnemyMonsterType3.png)	
 
 # Development
