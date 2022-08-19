@@ -1,3 +1,5 @@
+![Screenshot](assets/spriteRobot.png)	
+
 # Development
 
 ```
