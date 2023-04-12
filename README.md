@@ -1,3 +1,5 @@
+Deploy: https://tessecrack.github.io/SpaceInvaders/
+
 ![Screenshot](assets/EnemyMonsterType3.png)	
 
 # Development
